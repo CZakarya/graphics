@@ -1,4 +1,6 @@
-pen p=defaultpen+linewidth(2); // Set the pen width
+unitsize(20);
+
+pen p=defaultpen+linewidth(50); // Set the pen width
 
 // Brim
 draw((0,-10) .. (3.5,-13) .. (10,-15) -- (30,-15) .. (36.5,-13) .. (40,-10), p);
