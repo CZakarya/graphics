@@ -1,9 +1,19 @@
-FORMAT = svg
+# FILE OPTIONS
 IN = src
-OUT = output/$(FORMAT)
+OUT = output
+
+
+# IMAGE OPTIONS
+
+
+# ASYMPTOTE OPTIONS
+
+
+# MAKEFILE OPTIONS
 VPATH = $(IN):$(OUT)
 
 
+
 %.svg: %.asy
-	mkdir -p $(OUT)
-	asy -f $(FORMAT) $< -o $(OUT)/$*
+	mkdir -p $(OUT)/svg
+	asy -f svg $(OPTIONS) $< -o $(OUT)/svg/$*
