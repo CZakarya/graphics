@@ -3,10 +3,10 @@ unitsize(20);
 pen p=defaultpen+linewidth(50); // Set the pen width
 
 // Brim
-draw((0,-10) .. (3.5,-13) .. (10,-15) -- (30,-15) .. (36.5,-13) .. (40,-10), p);
+draw((0,-28) .. (3.5,-31) .. (10,-33) -- (30,-33) .. (36.5,-31) .. (40,-28), p);
 
 // Top
-filldraw(box((10,18), (30,-10)), drawpen=p);
+filldraw(box((10,0), (30,-26)), drawpen=p);
 
 // Belt
-draw(box((10,-10), (30,-15)), p);
+draw(box((10,-26), (30,-33)), p);
