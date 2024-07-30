@@ -73,6 +73,7 @@ if len(sys.argv) != 1:
 		sys.argv.pop(1)
 		print("Removing output directory...")
 		shutil.rmtree("output") # Scary
+		print("Output directory removed")
 
 	if sys.argv[1] == "all":
 		if len(sys.argv) == 3:
