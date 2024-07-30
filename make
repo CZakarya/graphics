@@ -1,6 +1,6 @@
 #!/bin/python3
 
-import os, sys
+import os, sys, shutil
 
 
 def get_file_tree(directory):
@@ -54,7 +54,8 @@ Use "make [svg|png|webp]" to compile all graphics in a specific format
 Flags:
 	-h or --help                     - Show this message
 	-s [graphic name] [svg|png|webp] - Compile a specific graphic
-	-o [output file]                 - compile to a specific file (only works after -s)
+	-o [output file]                 - Compile to a specific file (only works after -s)
+	-r                               - Remove the output directory before compiling
 
 Examples:
 - make all
@@ -68,7 +69,12 @@ if len(sys.argv) != 1:
 	if sys.argv[1] == "-h" or sys.argv[1] == "--help":
 		print_help()
 
-	elif sys.argv[1] == "all":
+	if sys.argv[1] == "-r":
+		sys.argv.pop(1)
+		print("Removing output directory...")
+		shutil.rmtree("output") # Scary
+
+	if sys.argv[1] == "all":
 		if len(sys.argv) == 3:
 			if sys.argv[2] == "svg":
 				print("Compiling all SVGs")
