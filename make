@@ -36,7 +36,7 @@ def build_file(file_to_build, file_format, output=None): # EXAMPLE: file_to_buil
 	if os.path.exists("output/" + file_format + "/" + directory) and os.path.isdir("output/" + file_format + "/" + directory):
 		pass # It exists
 	else:
-		print("Creating directory output/" + file_format + "/" + directory)
+		#print("Creating directory output/" + file_format + "/" + directory)
 		os.system("mkdir -p output/" + file_format + "/" + directory)
 	print("Building " + file_to_build + " to " + "output/" + file_format + "/" + filename + "." + file_format)
 	if output:
@@ -77,21 +77,11 @@ if len(sys.argv) != 1:
 
 	if sys.argv[1] == "all":
 		if len(sys.argv) == 3:
-			if sys.argv[2] == "svg":
-				print("Compiling all SVGs")
-				build_all("svg")
-
-			elif sys.argv[2] == "png":
-				print("Compiling all PNGs")
-				build_all("png")
-
-			elif sys.argv[2] == "webp":
-				print("Compiling all WEBPs")
-				build_all("webp")
+			build_all(sys.argv[2])
 
 		else:
 			if len(sys.argv) == 2:
-				print("Compiling all graphics")
+				#print("Compiling all graphics")
 				build_all("svg")
 				build_all("png")
 				build_all("webp")
