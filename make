@@ -49,7 +49,7 @@ def print_help():
 Graphics compilation wrapper
 
 Use "make all" to compile all graphics in all formats
-Use "make [svg|png|webp]" to compile all graphics in a specific format
+Use "make all [svg|png|webp]" to compile all graphics in a specific format
 
 Flags:
 	-h or --help                     - Show this message
@@ -74,6 +74,7 @@ if len(sys.argv) != 1:
 		print("Removing output directory...")
 		shutil.rmtree("output") # Scary
 		print("Output directory removed")
+		sys.exit()
 
 	if sys.argv[1] == "all":
 		if len(sys.argv) == 3:
